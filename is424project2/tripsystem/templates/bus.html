@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus</title>
+</head>
+<body>
+ <h1> {{trip.id}}: Trip from {{trip.source}} to {{trip.destination}}, moving at {{trip.time}}, {{trip.capacityLeft}} seats left!</h1>
+ <strong>People registered in this trip:</strong>
+<table>
+       <thead><th>person name</th></thead>
+       <tbody>
+       {% for person in trip.users.all %}
+       <tr><td>{{person.username}}</td></tr>
+       {% endfor %}
+       </tbody>
+
+   </table>
+<form action = "{% url 'trip' trip.id%}" method="POST">
+    {% csrf_token %}
+    <button type ='submit'>Reserve a seat!</button>
+</form>
+<strong>{{message}}</strong>
+<a href ="{% url 'displayBusses'%}">Back to view all the trips</a>
+</body>
+</html>

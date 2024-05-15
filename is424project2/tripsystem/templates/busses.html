@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Busses</title>
+</head>
+<body>
+  <h1>Busses available</h1>
+<table>
+      <thead><th>Trip id</th><th>Trip source</th><th>Trip destination</th><th>Trip time</th></thead>
+      <tbody>
+      {% for trip in trips %}
+      <tr><td><a href = "{% url 'trip' trip.id%}">{{trip.id}}</a></td><td>{{ trip.source }}</td><td>{{ trip.destination }}</td><td>{{trip.time}}</td></tr>
+      {% endfor %}
+      </tbody>
+  </table>
+</body>
+<a href="{% url 'login' %}">Log out</a>
+</html>
