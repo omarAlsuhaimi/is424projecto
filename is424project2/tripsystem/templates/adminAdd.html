@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add trip page</title>
+    <link rel="stylesheet" href="{% static 'design.css' %}">
+</head>
+<body>
+   <img src="{% static 'busImage.jpg' %}" alt="Bus Image">
+   <form action = "{% url 'addTrip' %}" method="POST">
+    {% csrf_token %}
+       {{form}}
+    <button type ='submit'>Add the trip!</button>
+</form>
+<p>{{message}}</p>
+<a href = "{% url 'displayAdmin' %}">Back to the menu</a>
+</body>
+</html>

@@ -5,11 +5,10 @@ body {
     padding: 20px;
 }
 
-/* Image Styling */
+
 img {
     float: right;
-    max-width: 30%;
-    margin-left: 20px; /* Space between image and text */
+
 }
 
 
@@ -21,7 +20,7 @@ h1 {
 
 p {
     margin-bottom: 20px;
-    line-height: 1.6;
+
 }
 
 
@@ -40,20 +39,17 @@ input, button {
 button {
     background-color: #007bb5;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    border-radius: 8px
 
-button:hover {
-    background-color: #005f8d;
-}
 
+}
 
 table {
-    width: 100%;
+
     border-collapse: collapse;
     margin-bottom: 20px;
+    width:100%;
+    max-width: 1000px;
 }
 
 thead {

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> trip Modify page</title>
+      <link rel="stylesheet" href="{% static 'design.css' %}">
+</head>
+<body>
+  <img src="{% static 'busImage.jpg' %}" alt="Bus Image">
+<table>
+      <thead><th>Trip id</th><th>Trip source</th><th>Trip destination</th><th>Trip time</th><th>Seats left</th></thead>
+      <tbody>
+      {% for trip in trips %}
+      <tr><td>{{trip.id}}</td><td>{{ trip.source }}</td><td>{{ trip.destination }}</td><td>{{trip.time}}</td><td>{{trip.capacityLeft}}</td></tr>
+      {% endfor %}
+      </tbody>
+  </table>
+<form action = "{% url 'modifyTrip' %}" method="POST">
+    {% csrf_token %}
+      {{form.as_p}}
+    <button type ='submit'>Modify the trip!</button>
+</form>
+<p>{{message}}</p>
+<a href = "{% url 'displayAdmin' %}">Back to the menu</a>
+
+</body>
+</html>

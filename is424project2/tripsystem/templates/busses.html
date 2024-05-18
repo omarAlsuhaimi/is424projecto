@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="{% static 'design.css' %}">
 </head>
 <body>
+  <img src="{% static 'busImage.jpg' %}" alt="Bus Image">
   <h1>Busses available</h1>
 <table>
-      <thead><th>Trip id</th><th>Trip source</th><th>Trip destination</th><th>Trip time</th></thead>
+      <thead><th>Trip id</th><th>Trip source</th><th>Trip destination</th><th>Trip time</th><th>Seats left</th></thead>
       <tbody>
       {% for trip in trips %}
-      <tr><td><a href = "{% url 'trip' trip.id%}">{{trip.id}}</a></td><td>{{ trip.source }}</td><td>{{ trip.destination }}</td><td>{{trip.time}}</td></tr>
+      <tr><td><a href = "{% url 'trip' trip.id%}">{{trip.id}}</a></td><td>{{ trip.source }}</td><td>{{ trip.destination }}</td><td>{{trip.time}}</td><td>{{trip.capacityLeft}}</td></tr>
       {% endfor %}
       </tbody>
   </table>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'design.css' %}">
 </head>
 <body>
+<img src="{% static 'busImage.jpg' %}" alt="Bus Image">
  <h1> {{trip.id}}: Trip from {{trip.source}} to {{trip.destination}}, moving at {{trip.time}}, {{trip.capacityLeft}} seats left!</h1>
  <strong>People registered in this trip:</strong>
 <table>
@@ -23,6 +24,7 @@
     <button type ='submit'>Reserve a seat/Remove reservation</button>
 </form>
 <strong>{{message}}</strong>
-<a href ="{% url 'displayBusses'%}">Back to view all the trips</a>
+<a href ="{% url 'displayBusses'%}">Back to view all the trips</a><br><br>
+<a href="{% url 'login' %}">Log out</a>
 </body>
 </html>

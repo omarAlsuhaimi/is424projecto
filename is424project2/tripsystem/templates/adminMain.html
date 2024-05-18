@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin main page</title>
+    <link rel="stylesheet" href="{% static 'design.css' %}">
+</head>
+<body>
+  <img src="{% static 'busImage.jpg' %}" alt="Bus Image">
+  <h1>Welcome to the system</h1>
+  <p>As an administrator you have the authority to add/modify/remove a Trip!</p>
+  <form action="{% url 'displayAdmin' %}" method = "POST">
+    {% csrf_token %}
+    <button type = "submit" name="choice" value = "add">Add a trip</button>
+    <button type = "submit" name="choice" value = "modify">Modify a trip</button>
+    <button type = "submit" name="choice" value = "remove">Remove a trip</button>
+  </form>
+<a href="{% url 'login' %}">Log out</a>
+</body>
+</html>
