@@ -18,7 +18,7 @@
    </table>
 <form action = "{% url 'trip' trip.id%}" method="POST">
     {% csrf_token %}
-    <button type ='submit'>Reserve a seat!</button>
+    <button type ='submit'>Reserve a seat/Remove reservation</button>
 </form>
 <strong>{{message}}</strong>
 <a href ="{% url 'displayBusses'%}">Back to view all the trips</a>

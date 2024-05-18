@@ -65,7 +65,10 @@ def displayBus(request,id):
                 trip.save()
                 message = "You have reserved the trip successfully!"
             else:
-                message = "You are already on the trip!"
+                trip.users.remove(user)
+                trip.capacityLeft =  trip.capacityLeft+1
+                trip.save()
+                message = "You have been removed from the trip successfully!"
         else:
             message ="Trip has no seats avaliable, sorry!"
 
@@ -73,4 +76,4 @@ def displayBus(request,id):
 
 class newLoginForm(forms.Form):
     username= forms.CharField(label="Username")
-    password = forms.CharField(label="Password (8 characters atleast)")
+    password = forms.CharField(label="Password (8 characters atleast)",widget=forms.PasswordInput)

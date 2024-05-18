@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <title>Login</title>
 </head>
 <body>
+    <img src="{% static 'busImage.jpg' %}" alt="Bus Image">
    <h1>Welcome to the KSU bus system!</h1>
     <form action="{% url 'validate_login' %}" method="POST">
           {% csrf_token %}
